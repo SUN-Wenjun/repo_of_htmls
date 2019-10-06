@@ -446,10 +446,10 @@ summary {
 <pre class="r"><code>animal_song &lt;- function(num = 10, animal = &quot;monkey&quot;) {
   for (i in num:0) {
   if (i &gt; 1) {
-    cat(i, &quot;little&quot;, tolower(paste0(animal, &quot;s&quot;)), &quot;jumping on the bed,&quot;, &quot;\n&quot;,
+    cat(i, &quot;little&quot;, tolower(make_plural(animal)), &quot;jumping on the bed,&quot;, &quot;\n&quot;,
       &quot;One fell down and bumped his head,&quot;, &quot;\n&quot;, 
       &quot;Mama called the doctor and the doctor said,&quot;, &quot;\n&quot;,
-      '&quot;No more', tolower(paste0(animal, &quot;s&quot;)), 'jumping on the bed!&quot;', &quot;\n&quot;,
+      '&quot;No more', tolower(make_plural(animal)), 'jumping on the bed!&quot;', &quot;\n&quot;,
       ' ', &quot;\n&quot;)
   }
   if (i == 1) {
@@ -460,10 +460,10 @@ summary {
         ' ', &quot;\n&quot;)
   }
   if (i == 0) {
-    cat(&quot;No little&quot;, tolower(paste0(animal, &quot;s&quot;)), &quot;jumping on the bed,&quot;, &quot;\n&quot;, 
+    cat(&quot;No little&quot;, tolower(make_plural(animal)), &quot;jumping on the bed,&quot;, &quot;\n&quot;, 
         &quot;None fell down and bumped their head,&quot;, &quot;\n&quot;,
         &quot;Papa called the doctor and the doctor said,&quot;, &quot;\n&quot;,
-        '&quot;Put those', tolower(paste0(animal, &quot;s&quot;)), 'right to bed!&quot;', &quot;\n&quot;,
+        '&quot;Put those', tolower(make_plural(animal)), 'right to bed!&quot;', &quot;\n&quot;,
         ' ', &quot;\n&quot;)
     }
   }
@@ -500,10 +500,10 @@ animal_song(3, &quot;Piglet&quot;)</code></pre>
   } else {
     for (i in num:0) {
       if (i &gt; 1) {
-        cat(i, &quot;little&quot;, tolower(paste0(animal, &quot;s&quot;)), &quot;jumping on the bed,&quot;, &quot;\n&quot;,
+        cat(i, &quot;little&quot;, tolower(make_plural(animal)), &quot;jumping on the bed,&quot;, &quot;\n&quot;,
           &quot;One fell down and bumped his head,&quot;, &quot;\n&quot;, 
           &quot;Mama called the doctor and the doctor said,&quot;, &quot;\n&quot;,
-          '&quot;No more', tolower(paste0(animal, &quot;s&quot;)), 'jumping on the bed!&quot;', &quot;\n&quot;,
+          '&quot;No more', tolower(make_plural(animal)), 'jumping on the bed!&quot;', &quot;\n&quot;,
           ' ', &quot;\n&quot;)
       }
       if (i == 1) {
@@ -514,10 +514,10 @@ animal_song(3, &quot;Piglet&quot;)</code></pre>
             ' ', &quot;\n&quot;)
       }
       if (i == 0) {
-        cat(&quot;No little&quot;, tolower(paste0(animal, &quot;s&quot;)), &quot;jumping on the bed,&quot;, &quot;\n&quot;, 
+        cat(&quot;No little&quot;, tolower(make_plural(animal)), &quot;jumping on the bed,&quot;, &quot;\n&quot;, 
             &quot;None fell down and bumped their head,&quot;, &quot;\n&quot;,
             &quot;Papa called the doctor and the doctor said,&quot;, &quot;\n&quot;,
-            '&quot;Put those', tolower(paste0(animal, &quot;s&quot;)), 'right to bed!&quot;', &quot;\n&quot;,
+            '&quot;Put those', tolower(make_plural(animal)), 'right to bed!&quot;', &quot;\n&quot;,
             ' ', &quot;\n&quot;)
         }
       }
@@ -540,10 +540,10 @@ animal_song(num = 'hhh', animal = &quot;Piglet&quot;)</code></pre>
       if (rbinom(n = 1, size = 1, prob = p_mama) == 1) {parent = &quot;Mama&quot;} else {parent = &quot;Papa&quot;}
       
       if (i &gt; 1) {
-        cat(i, &quot;little&quot;, tolower(paste0(animal, &quot;s&quot;)), tolower(activity), &quot;on the bed,&quot;, &quot;\n&quot;,
+        cat(i, &quot;little&quot;, tolower(make_plural(animal)), tolower(activity), &quot;on the bed,&quot;, &quot;\n&quot;,
           &quot;One fell down and bumped his head,&quot;, &quot;\n&quot;, 
           parent, &quot;called the doctor and the doctor said,&quot;, &quot;\n&quot;,
-          '&quot;No more', tolower(paste0(animal, &quot;s&quot;)), 'jumping on the bed!&quot;', &quot;\n&quot;,
+          '&quot;No more', tolower(make_plural(animal)), 'jumping on the bed!&quot;', &quot;\n&quot;,
           ' ', &quot;\n&quot;)
       }
       if (i == 1) {
@@ -554,10 +554,10 @@ animal_song(num = 'hhh', animal = &quot;Piglet&quot;)</code></pre>
             ' ', &quot;\n&quot;)
       }
       if (i == 0) {
-        cat(&quot;No little&quot;, tolower(paste0(animal, &quot;s&quot;)), tolower(activity), &quot;on the bed,&quot;, &quot;\n&quot;, 
+        cat(&quot;No little&quot;, tolower(make_plural(animal)), tolower(activity), &quot;on the bed,&quot;, &quot;\n&quot;, 
             &quot;None fell down and bumped their head,&quot;, &quot;\n&quot;,
             parent, &quot;called the doctor and the doctor said,&quot;, &quot;\n&quot;,
-            '&quot;Put those', tolower(paste0(animal, &quot;s&quot;)), 'right to bed!&quot;', &quot;\n&quot;,
+            '&quot;Put those', tolower(make_plural(animal)), 'right to bed!&quot;', &quot;\n&quot;,
             ' ', &quot;\n&quot;)
         }
       }
@@ -572,12 +572,12 @@ animal_song(num = 3, animal = &quot;kangaroo&quot;, activity = &quot;dancing&quo
 ##    
 ## 2 little kangaroos dancing on the bed, 
 ##  One fell down and bumped his head, 
-##  Mama called the doctor and the doctor said, 
+##  Papa called the doctor and the doctor said, 
 ##  &quot;No more kangaroos jumping on the bed!&quot; 
 ##    
 ## 1 little kangaroo dancing on the bed, 
 ##  One fell down and bumped his head, 
-##  Papa called the doctor and the doctor said, 
+##  Mama called the doctor and the doctor said, 
 ##  &quot;No more kangaroo jumping on the bed!&quot; 
 ##    
 ## No little kangaroos dancing on the bed, 
@@ -682,7 +682,7 @@ square_plot(15, F, F, T)</code></pre>
 </div>
 <div id="c-add-error-checks" class="section level4">
 <h4>c) Add error checks</h4>
-<p>Try your function on an empty vector <code>z1 &lt;- c()</code> and a vector containing only <code>NA</code>s. You probably get a rather cryptic error. Alter your function so that it stops when a user supplies an empty vector or a vector with only <code>NA</code>s and gives a short warning about the issue. I suggest to use the <code>return()</code> function for this as the first step of your function.</p>
+<p>Try your function on an empty vector <code>z1 &lt;- c()</code> and a vector containing only <code>NA</code>s. You probably get a rather cryptic error.Alter your function so that it stops when a user supplies an empty vector or a vector with only <code>NA</code>s and gives a short warning about the issue.</p>
 <pre class="r"><code>desc_stats &lt;- function(vector, median = FALSE) {
   if (length(vector) == 0) {
     return('Input vector should not be empty')
